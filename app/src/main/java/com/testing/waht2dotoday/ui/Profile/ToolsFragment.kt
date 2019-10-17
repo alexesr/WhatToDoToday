@@ -1,4 +1,4 @@
-package com.testing.waht2dotoday.ui.tools
+package com.testing.waht2dotoday.ui.Profile
 
 import android.os.Bundle
 import android.view.LayoutInflater

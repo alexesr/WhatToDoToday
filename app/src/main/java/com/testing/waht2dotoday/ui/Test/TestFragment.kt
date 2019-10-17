@@ -1,4 +1,4 @@
-package com.testing.waht2dotoday.ui.gallery
+package com.testing.waht2dotoday.ui.Test
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,18 +12,18 @@ import com.testing.waht2dotoday.R
 
 class GalleryFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var test: Test
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        test =
+            ViewModelProviders.of(this).get(Test::class.java)
+        val root = inflater.inflate(R.layout.fragment_test, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(this, Observer {
+        test.text.observe(this, Observer {
             textView.text = it
         })
         return root

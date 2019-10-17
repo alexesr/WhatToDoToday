@@ -96,10 +96,4 @@ class SignInActivity : AppCompatActivity() {
             //startActivity(mainActivityIntent)
         }
     }
-
-    companion object {
-        fun getLaunchIntent(from: Context) = Intent(from, SignInActivity::class.java).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        }
-    }
 }
