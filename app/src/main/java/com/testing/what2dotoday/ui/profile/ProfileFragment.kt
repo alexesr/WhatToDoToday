@@ -1,4 +1,4 @@
-package com.testing.what2dotoday.ui.Profile
+package com.testing.what2dotoday.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater

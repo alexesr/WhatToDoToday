@@ -25,7 +25,7 @@
             tools:listitem="@layout/place_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/places_by_category_recyclyerView"
+            android:id="@+id/places_recyclyerView"
             />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

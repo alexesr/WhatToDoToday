@@ -1,4 +1,4 @@
-package com.testing.what2dotoday.ui.Places
+package com.testing.what2dotoday.ui.places
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
 
 
-class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesViewModel>): RecyclerView.Adapter<PlaceByCategoryAdapter.ViewHolder>(){
+class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByCategoryAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.place_row ,parent,false)
         return ViewHolder(v)
@@ -21,11 +21,11 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesViewModel>): Recycl
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val row: PlacesViewModel = placesList[position]
+        val row: PlacesModel = placesList[position]
 
-        //holder.placeImage.setImageResource
-        holder.placeTitle.text = row.placeTitle.toString()
-        holder.placeDescription.text = row.placeDescription.toString()
+        holder.placeImage.setImageResource(row.image)
+        holder.placeTitle.text = row.title
+        holder.placeDescription.text = row.description
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){

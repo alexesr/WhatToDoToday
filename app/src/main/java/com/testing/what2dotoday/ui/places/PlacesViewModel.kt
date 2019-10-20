@@ -1,4 +1,4 @@
-package com.testing.what2dotoday.ui.Places
+package com.testing.what2dotoday.ui.places
 
 import android.widget.ImageView
 import androidx.lifecycle.LiveData
@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 
 class PlacesViewModel : ViewModel() {
 
-    private val _placeImage = MutableLiveData<ImageView>().apply {}
+    private val _placeImage = MutableLiveData<Int>().apply {
+        value = 0
+    }
 
     private val _placeTitle = MutableLiveData<String>().apply {
         value = "Default text"
@@ -15,7 +17,7 @@ class PlacesViewModel : ViewModel() {
     private val _placeDescription = MutableLiveData<String>().apply {
         value = "Default desciption"
     }
-    val placeImage: LiveData<ImageView> = _placeImage
+    val placeImage:LiveData<Int> = _placeImage
     val placeTitle: LiveData<String> = _placeTitle
     val placeDescription: LiveData<String> = _placeDescription
 }
