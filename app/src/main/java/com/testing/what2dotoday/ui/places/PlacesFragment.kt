@@ -23,8 +23,9 @@ class PlacesFragment : Fragment() {
 
         placesList = ArrayList<PlacesModel>()
         placesList.add(PlacesModel(R.drawable.beach,"Beach","Descripcion de la playa"))
-        placesList.add(PlacesModel(R.drawable.beach,"Forest","Descripcion de Forest"))
-        placesList.add(PlacesModel(R.drawable.beach,"Beach","Descripcion de la playa"))
+        placesList.add(PlacesModel(R.drawable.forest,"Forest","Descripcion de Forest"))
+        placesList.add(PlacesModel(R.drawable.mountain,"Beach","Descripción de la Montaña"))
+        placesList.add(PlacesModel(R.drawable.desert, "Desert", "Descripción del Desierto"))
         places_recyclyerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = PlaceByCategoryAdapter(placesList)

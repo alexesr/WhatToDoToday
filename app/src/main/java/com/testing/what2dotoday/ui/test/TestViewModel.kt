@@ -1,4 +1,4 @@
-package com.testing.what2dotoday.ui.Test
+package com.testing.what2dotoday.ui.test
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
