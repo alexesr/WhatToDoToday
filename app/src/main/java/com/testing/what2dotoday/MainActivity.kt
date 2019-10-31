@@ -13,6 +13,13 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.nav_header_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val user = FirebaseAuth.getInstance().currentUser
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -33,6 +41,21 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
+
+        //To set user values in navbar
+        val headerNav : View = navView.getHeaderView(0)
+        val userNav : TextView = headerNav.findViewById(R.id.userText)
+        val emailNav : TextView = headerNav.findViewById(R.id.mailText)
+        val photoNav : ImageView = headerNav.findViewById(R.id.image)
+        if(user != null){
+            val photoUrl = user.photoUrl
+            Picasso.get().load(photoUrl).into(photoNav);
+            userNav.text = user.displayName
+            emailNav.text = user.email
+
+        }
+
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -41,8 +64,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_profile, R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
+
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
