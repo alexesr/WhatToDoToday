@@ -22,13 +22,14 @@ class PlacesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         placesList = ArrayList<PlacesModel>()
-        placesList.add(PlacesModel(R.drawable.beach,"Beach","Descripcion de la playa"))
-        placesList.add(PlacesModel(R.drawable.beach,"Forest","Descripcion de Forest"))
-        placesList.add(PlacesModel(R.drawable.beach,"Beach","Descripcion de la playa"))
+        placesList.add(PlacesModel(R.drawable.beach,"Playa Taki Taki","Descripcion de la playa"))
+        placesList.add(PlacesModel(R.drawable.beach,"Forest Azul","Descripcion de Forest"))
+        placesList.add(PlacesModel(R.drawable.beach,"Abolengo","Descripcion de Abolengo, un antro"))
         places_recyclyerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = PlaceByCategoryAdapter(placesList)
         }
+
     }
     companion object {
         fun newInstance(): PlacesFragment = PlacesFragment()

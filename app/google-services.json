@@ -18,7 +18,7 @@
           "client_id": "561149226475-0hdsvcfu5rg5ecn4djlpuu89l6sujafm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.testing.waht2dotoday",
+            "package_name": "com.testing.what2dotoday",
             "certificate_hash": "a60146c5e8db0e119cd0b31303eb5a00795b7122"
           }
         },
@@ -36,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "561149226475-gbjiugp4rf066ar2d09j4moipal9hq6o.apps.googleusercontent.com",
+              "client_id": "561149226475-hs209vi6e8ht9vl88bi58fhhf57ars60.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -4,6 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:id="@+id/search_space"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="HOLA"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+    </RelativeLayout>>
+
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@id/search_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                tools:listitem="@layout/place_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/places_recyclyerView"
+                />
+        </ScrollView>
+    </RelativeLayout>
+
+
 <!--
     <TextView
         android:id="@+id/text_slideshow"
@@ -17,15 +50,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" /> -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <androidx.recyclerview.widget.RecyclerView
-            tools:listitem="@layout/place_row"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/places_recyclyerView"
-            />
-    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
