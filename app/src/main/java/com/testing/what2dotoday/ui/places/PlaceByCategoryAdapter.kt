@@ -1,16 +1,18 @@
 package com.testing.what2dotoday.ui.places
 
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.Window
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
+import org.w3c.dom.Text
 
 
 class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByCategoryAdapter.ViewHolder>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.place_row ,parent,false)
         return ViewHolder(v)
@@ -33,5 +35,29 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         var placeImage = itemView.findViewById(R.id.place_image) as ImageView
         var placeTitle = itemView.findViewById(R.id.place_title) as TextView
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
+
+        var btn: ImageButton = itemView.findViewById(R.id.write)
+
+        fun showDialog() {
+            val myDialog = Dialog(this)
+            myDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            myDialog.setContentView(R.layout.write_message)
+            myDialog.setTitle("Prueba")
+
+            val txt: TextView = itemView.findViewById(R.id.enviar)
+            txt.isEnabled = true
+            txt.setOnClickListener{
+                Toast.makeText(applicationContext, "Enviar feedback.", Toast.LENGTH_LONG).show()
+                myDialog.cancel()
+            }
+            myDialog.show()
+        }
+
+        btn.setOnClickListener{
+            showDialog()
+        }
+
+
     }
+
 }

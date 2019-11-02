@@ -20,10 +20,6 @@ import org.w3c.dom.Text
 
 class PlacesFragment : Fragment() {
 
-    internal lateinit var btn: Button
-    internal lateinit var myDialog: Dialog
-    internal lateinit var txt: Text
-
     private lateinit var placesList: ArrayList<PlacesModel>
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,26 +43,6 @@ class PlacesFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             adapter = PlaceByCategoryAdapter(placesList)
         }
-        val btn: ImageButton = findViewById(R.id.write)
-        btn.setOnClickListener{
-            showDialog()
-        }
-
-    }
-
-    fun showDialog() {
-        val myDialog = Dialog(this)
-        myDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        myDialog.setContentView(R.layout.write_message)
-        myDialog.setTitle("Prueba")
-
-        val txt: TextView = findViewById(R.id.enviar)
-        txt.isEnabled = true
-        txt.setOnClickListener{
-            Toast.makeText(applicationContext, "Enviar feedback.", Toast.LENGTH_LONG).show()
-            myDialog.cancel()
-        }
-        myDialog.show()
     }
     companion object {
         fun newInstance(): PlacesFragment = PlacesFragment()

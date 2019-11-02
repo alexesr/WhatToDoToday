@@ -33,6 +33,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/places_recyclyerView"
                 />
+            <ImageButton
+                tools:listitem="@layout/place_row"
+                android:src="@drawable/write"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="350dp"
+                android:background="#ffffff"
+                android:layout_marginTop="63dp"
+                android:id="@+id/write"/>
         </ScrollView>
     </RelativeLayout>
 
