@@ -55,11 +55,16 @@ class HomeFragment : Fragment() {
     }
 
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+<<<<<<< HEAD
 
+=======
+        //setupUI()
+>>>>>>> be443126bd5dc14843cf698fdb9b0f75de7a6a8a
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
@@ -96,6 +101,7 @@ class HomeFragment : Fragment() {
                 root.btn_start_updates.isEnabled = !btn_start_updates.isEnabled
             })
         }
+
         return root
     }
     private fun buildLocationRequest(){
@@ -115,22 +121,5 @@ class HomeFragment : Fragment() {
         }
     }
 
-    companion object {
-        fun getLaunchIntent(from: Context) = Intent(from, MainActivity::class.java).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        }
-    }
 
-    private fun setupUI() {
-        sign_out_button.setOnClickListener {
-            signOut()
-        }
-    }
-
-    private fun signOut() {
-        val signInActivityIntent = Intent(getContext() as Activity, SignInActivity::class.java)
-        startActivity(signInActivityIntent)
-        //startActivity(SignInActivity.getLaunchIntent(this))
-        FirebaseAuth.getInstance().signOut();
-    }
 }

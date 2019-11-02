@@ -1,9 +1,12 @@
 package com.testing.what2dotoday
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.android.material.snackbar.Snackbar
+import android.util.Log
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -11,8 +14,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_sign_in.*
+
+import kotlinx.android.synthetic.main.fragment_profile.profile_name
 
 class SignInActivity : AppCompatActivity() {
 
@@ -22,13 +28,23 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-        firebaseAuth = FirebaseAuth.getInstance()
+        //Button listeners
         setupUI()
+        //Configure google sign in
         configureGoogleSignIn()
+        //Initialize firebase auth after google sign in
+        firebaseAuth = FirebaseAuth.getInstance()
 
 
+
+    }
+    private fun setupUI() {
+        google_button.setOnClickListener {
+            signIn()
+        }
     }
     private fun configureGoogleSignIn() {
         mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -43,11 +59,17 @@ class SignInActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    private fun setupUI() {
-        google_button.setOnClickListener {
-            signIn()
+    override fun onStart() {
+        super.onStart()
+        val user = FirebaseAuth.getInstance().currentUser
+        val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
+        if (user != null) {
+            startActivity(mainActivityIntent)
+            finish()
         }
     }
+
+
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
@@ -56,12 +78,12 @@ class SignInActivity : AppCompatActivity() {
 
             if (it.isSuccessful) {
                 startActivity(mainActivityIntent)
-                //startActivity(MainActivity.getLaunchIntent(this))
             } else {
                 Toast.makeText(this, "it.Sucessful returned false", Toast.LENGTH_LONG).show()
             }
         }
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         //borrar:
@@ -83,16 +105,5 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        val user = FirebaseAuth.getInstance().currentUser
-        val mainActivityIntent = Intent(applicationContext, MainActivity::class.java)
-        if (user != null) {
-            startActivity(mainActivityIntent)
-            //startActivity(MainActivity.getLaunchIntent(this))
-            finish()
-        }else{
-            //startActivity(mainActivityIntent)
-        }
-    }
+
 }
