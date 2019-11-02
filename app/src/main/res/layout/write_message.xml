@@ -6,23 +6,30 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginHorizontal="55dp">
 
-        <ImageView
-            android:layout_height="66dp"
-            android:layout_width="66dp"
+        <LinearLayout
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
             android:background="#ffffff"
-            android:layout_centerInParent="true"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star"
+                android:background="#ffffff"
+                android:layout_marginTop="35dp"
+                android:id="@+id/write"/>
+                />
             />
+        </LinearLayout>
     </RelativeLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ok"
-        android:layout_gravity="center"
-        android:textSize="19dp"
-        android:textColor="@color/colorPrimary"
-        android:id="@+id/enviar"
-        />
 </LinearLayout>

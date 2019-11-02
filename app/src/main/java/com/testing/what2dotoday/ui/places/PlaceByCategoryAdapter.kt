@@ -1,13 +1,16 @@
 package com.testing.what2dotoday.ui.places
 
 import android.app.Dialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
+import kotlinx.android.synthetic.main.fragment_places.*
 import org.w3c.dom.Text
 
 
@@ -22,7 +25,6 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         return placesList.size
     }
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val row: PlacesModel = placesList[position]
 
@@ -35,29 +37,6 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         var placeImage = itemView.findViewById(R.id.place_image) as ImageView
         var placeTitle = itemView.findViewById(R.id.place_title) as TextView
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
-
-        var btn: ImageButton = itemView.findViewById(R.id.write)
-
-        fun showDialog() {
-            val myDialog = Dialog(this)
-            myDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            myDialog.setContentView(R.layout.write_message)
-            myDialog.setTitle("Prueba")
-
-            val txt: TextView = itemView.findViewById(R.id.enviar)
-            txt.isEnabled = true
-            txt.setOnClickListener{
-                Toast.makeText(applicationContext, "Enviar feedback.", Toast.LENGTH_LONG).show()
-                myDialog.cancel()
-            }
-            myDialog.show()
-        }
-
-        btn.setOnClickListener{
-            showDialog()
-        }
-
-
     }
 
 }

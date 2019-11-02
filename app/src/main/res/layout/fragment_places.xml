@@ -4,21 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
-    <RelativeLayout
-        android:id="@+id/search_space"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        >
-        <TextView
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="HOLA"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-    </RelativeLayout>>
+
 
     <RelativeLayout
-        app:layout_constraintTop_toBottomOf="@id/search_space"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -33,15 +22,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/places_recyclyerView"
                 />
-            <ImageButton
-                tools:listitem="@layout/place_row"
-                android:src="@drawable/write"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="350dp"
-                android:background="#ffffff"
-                android:layout_marginTop="63dp"
-                android:id="@+id/write"/>
         </ScrollView>
     </RelativeLayout>
 

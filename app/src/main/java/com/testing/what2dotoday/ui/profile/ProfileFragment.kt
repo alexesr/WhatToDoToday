@@ -39,7 +39,6 @@ class ProfileFragment : Fragment() {
                     textUser.text = user.displayName
                     textEmail.text = user.email
                     val photoUrl = user.photoUrl
-                    //Log.i("Foto", photoUrl.toString())
                     Picasso.get().load(photoUrl).into(image);
 
                 }else{
