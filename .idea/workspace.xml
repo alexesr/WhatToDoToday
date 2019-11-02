@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="AndroidLayouts">
     <shared>
       <config />
@@ -334,9 +335,12 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> d4e8812812eb0bf7bb2c99f5c91c50872a7da839
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-16" />
+    <option name="x" value="1908" />
     <option name="width" value="1944" />
+<<<<<<< HEAD
     <option name="height" value="2086" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -428,41 +432,18 @@
 >>>>>>> be443126bd5dc14843cf698fdb9b0f75de7a6a8a
       <pane id="Scope" />
     </panes>
+=======
+    <option name="height" value="2084" />
+>>>>>>> d4e8812812eb0bf7bb2c99f5c91c50872a7da839
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
-    <property name="project.structure.last.edited" value="Dependencies" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
-  <component name="RecentsManager">
-    <key name="android.template.packageName">
-      <recent name="com.testing.waht2dotoday" />
-    </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -523,6 +504,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="WhatToDoToday [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1162,5 +1144,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> d4e8812812eb0bf7bb2c99f5c91c50872a7da839
   </component>
 </project>
