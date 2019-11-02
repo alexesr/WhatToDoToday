@@ -15,10 +15,10 @@ import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.View
 import android.widget.ImageView
+import android.widget.SearchView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.nav_header_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//        val fab: FloatingActionButton = findViewById(R.id.fab)
+//        fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+//        }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
+
         return true
     }
 

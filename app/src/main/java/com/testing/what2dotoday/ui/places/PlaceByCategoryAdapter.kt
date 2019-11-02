@@ -10,6 +10,7 @@ import com.testing.what2dotoday.R
 
 
 class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByCategoryAdapter.ViewHolder>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.place_row ,parent,false)
         return ViewHolder(v)
