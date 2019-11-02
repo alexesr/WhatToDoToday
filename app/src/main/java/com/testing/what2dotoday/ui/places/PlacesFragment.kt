@@ -1,6 +1,5 @@
 package com.testing.what2dotoday.ui.places
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,7 +35,6 @@ class PlacesFragment : Fragment() {
         placesList.add(PlacesModel(R.drawable.beach,"Forest Azul","Descripcion de Forest"))
         placesList.add(PlacesModel(R.drawable.beach,"Abolengo","Descripcion de Abolengo, un antro"))
         places_adapter = PlaceBySearchAdapter(placesList)
-
         places_recyclyerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = places_adapter
@@ -44,15 +42,13 @@ class PlacesFragment : Fragment() {
 
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater){
         // Inflate the menu; this adds items to the action bar if it is present.
         inflater.inflate(R.menu.menu_search, menu)
         val searchItem = menu.findItem(R.id.app_bar_search)
         val searchView = searchItem.actionView as SearchView
         searchView.queryHint = "Ingresa un lugar"
-        searchView.setOnQueryTextListener(@RequiresApi(Build.VERSION_CODES.HONEYCOMB)
-        object :  SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object :  SearchView.OnQueryTextListener {
 
             override fun onQueryTextChange(newText: String): Boolean {
                 places_adapter.getFilter().filter(newText)
