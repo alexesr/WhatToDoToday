@@ -9,9 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
 import android.util.Log
+import android.widget.TableLayout
+import com.google.android.material.tabs.TabLayout
 
 
-class PlaceBySearchAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceBySearchAdapter.ViewHolder>(){
+class PlaceBySearchAdapter(val placesList: ArrayList<PlacesModel>, val tabs: TabLayout): RecyclerView.Adapter<PlaceBySearchAdapter.ViewHolder>(){
     var flag : Boolean = false
 
     private val exampleListFull: ArrayList<PlacesModel> = placesList
@@ -20,6 +22,7 @@ class PlaceBySearchAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView
         var placeImage = itemView.findViewById(R.id.place_image) as ImageView
         var placeTitle = itemView.findViewById(R.id.place_title) as TextView
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -8,14 +8,18 @@ import android.widget.SearchView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.testing.what2dotoday.R
 import kotlinx.android.synthetic.main.fragment_places.*
 import org.w3c.dom.Text
+import com.google.android.material.tabs.TabLayout
+import com.testing.what2dotoday.R
+import android.widget.TableLayout
+
 
 class PlacesFragment : Fragment() {
 
     private lateinit var places_adapter: PlaceBySearchAdapter
     private lateinit var placesList: ArrayList<PlacesModel>
+    private lateinit var tabs: TabLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,11 +34,19 @@ class PlacesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        tabs = tabsid
+        tabs.addTab(tabs.newTab().setText("Location"))
+        tabs.addTab(tabs.newTab().setText("Price"))
+        tabs.addTab(tabs.newTab().setText("All"))
+
+
         placesList = ArrayList<PlacesModel>()
         placesList.add(PlacesModel(R.drawable.beach,"Playa Taki Taki","Descripcion de la playa"))
-        placesList.add(PlacesModel(R.drawable.beach,"Forest Azul","Descripcion de Forest"))
-        placesList.add(PlacesModel(R.drawable.beach,"Abolengo","Descripcion de Abolengo, un antro"))
-        places_adapter = PlaceBySearchAdapter(placesList)
+        placesList.add(PlacesModel(R.drawable.forest,"Forest Azul","Descripcion de Forest"))
+        placesList.add(PlacesModel(R.drawable.desert,"Abolengo","Descripcion de Abolengo, un antro"))
+
+
+        places_adapter = PlaceBySearchAdapter(placesList,tabs)
         places_recyclyerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = places_adapter
