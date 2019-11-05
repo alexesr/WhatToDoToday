@@ -60,11 +60,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-<<<<<<< HEAD
 
-=======
-        //setupUI()
->>>>>>> be443126bd5dc14843cf698fdb9b0f75de7a6a8a
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
