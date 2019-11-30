@@ -1,12 +1,17 @@
 package com.testing.what2dotoday.ui.places
 
+import android.app.Dialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.Window
+import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
+import kotlinx.android.synthetic.main.fragment_places.*
+import org.w3c.dom.Text
 
 
 class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByCategoryAdapter.ViewHolder>(){
@@ -19,7 +24,6 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
     override fun getItemCount(): Int {
         return placesList.size
     }
-
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val row: PlacesModel = placesList[position]
@@ -34,4 +38,5 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         var placeTitle = itemView.findViewById(R.id.place_title) as TextView
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
     }
+
 }
