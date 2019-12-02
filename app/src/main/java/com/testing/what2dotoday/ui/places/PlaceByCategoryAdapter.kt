@@ -44,7 +44,7 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         holder.placeTitle.text = row.title
         holder.placeDescription.text = row.description
         holder.placeLoc.text = row.location
-        holder.placePrice.text = "$"+row.price
+        holder.placePrice.text = row.price
 
         holder.write.setOnClickListener{
 

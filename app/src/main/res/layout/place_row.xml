@@ -46,21 +46,37 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:id="@+id/locImage"
+            android:layout_marginTop="63dp"
+            android:src="@drawable/location"
+            />
         <TextView
             android:text="Near"
             android:textSize="18dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="85dp"
+            android:layout_marginStart="100dp"
             android:background="#ffffff"
             android:layout_marginTop="63dp"
             android:id="@+id/location"/>
-        <TextView
-            android:text="$1.5"
-            android:textSize="18dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="20dp"
             android:layout_marginStart="150dp"
+            android:id="@+id/coin"
+            android:layout_marginTop="63dp"
+            android:src="@drawable/coin"
+            />
+        <TextView
+            android:text="Expensive"
+            android:textSize="18dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="170dp"
             android:background="#ffffff"
             android:layout_marginTop="63dp"
             android:id="@+id/price"/>
