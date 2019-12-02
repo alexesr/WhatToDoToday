@@ -1,14 +1,17 @@
 package com.testing.what2dotoday.ui.places
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
 import android.util.Log
+import android.widget.Button
 
 
 class PlaceBySearchAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceBySearchAdapter.ViewHolder>(){
@@ -20,8 +23,17 @@ class PlaceBySearchAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView
         var placeImage = itemView.findViewById(R.id.place_image) as ImageView
         var placeTitle = itemView.findViewById(R.id.place_title) as TextView
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
+
+        var write = itemView.findViewById(R.id.write) as ImageButton
     }
 
+    class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
+        init {
+            view.setOnClickListener{
+                println("Funciona")
+            }
+        }
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.place_row ,parent,false)
         return ViewHolder(v)
@@ -38,6 +50,11 @@ class PlaceBySearchAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView
         holder.placeImage.setImageResource(row.image)
         holder.placeTitle.text = row.title
         holder.placeDescription.text = row.description
+
+        val context = holder.itemView.context
+        holder.itemView.setOnClickListener(){
+
+        }
     }
 
     fun getFilter(): Filter {
