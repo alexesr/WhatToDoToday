@@ -56,7 +56,6 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
 
         var write = itemView.findViewById(R.id.write) as ImageButton
-
     }
 
 }
