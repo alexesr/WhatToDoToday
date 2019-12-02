@@ -17,8 +17,11 @@ class PlacesViewModel : ViewModel() {
     private val _placeDescription = MutableLiveData<String>().apply {
         value = "Default desciption"
     }
-    private val _loc = MutableLiveData<String>().apply {
-        value = "Near"
+    private val _lat = MutableLiveData<Double>().apply {
+        value = 2.3
+    }
+    private val _long = MutableLiveData<Double>().apply {
+        value = 2.9
     }
     private val _price = MutableLiveData<String>().apply {
         value = "Default"
@@ -26,6 +29,7 @@ class PlacesViewModel : ViewModel() {
     val placeImage:LiveData<Int> = _placeImage
     val placeTitle: LiveData<String> = _placeTitle
     val placeDescription: LiveData<String> = _placeDescription
-    val loc: LiveData<String> = _loc
+    val lat: LiveData<Double> = _lat
+    val long: LiveData<Double> = _long
     val price: LiveData<String> = _price
 }

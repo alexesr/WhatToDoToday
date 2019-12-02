@@ -14,6 +14,7 @@ import com.testing.what2dotoday.R
 import com.testing.what2dotoday.SignInActivity
 import kotlinx.android.synthetic.main.fragment_places.*
 import android.content.Intent
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import com.testing.what2dotoday.ui.profile.ProfileFragment
 import com.testing.what2dotoday.ui.test.TestAdapter
@@ -40,17 +41,20 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val row: PlacesModel = placesList[position]
 
-        holder.placeImage.setImageResource(row.image)
-        holder.placeTitle.text = row.title
-        holder.placeDescription.text = row.description
-        holder.placeLoc.text = row.location
-        holder.placePrice.text = row.price
+        if(row.lat > 10.0 && row.long < 7.5){
+            holder.placeImage.setImageResource(row.image)
+            holder.placeTitle.text = row.title
+            holder.placeDescription.text = row.description
+            holder.placeLoc.text = "Near"
+            holder.placePrice.text = row.price
+            holder.write.setOnClickListener{
 
-        holder.write.setOnClickListener{
-
-            val context = holder.itemView.context
-            val intent = Intent(context, SignInActivity::class.java)
-            context.startActivity(intent)
+                val context = holder.itemView.context
+                val intent = Intent(context, SignInActivity::class.java)
+                context.startActivity(intent)
+            }
+        }else{
+            holder.card.removeView(holder.lay)
         }
     }
 
@@ -62,6 +66,8 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         var placePrice =  itemView.findViewById(R.id.price) as TextView
 
         var write = itemView.findViewById(R.id.write) as ImageButton
+        var card = itemView.findViewById(R.id.cardL) as CardView
+        var lay = itemView.findViewById(R.id.lay) as RelativeLayout
     }
 
 }
