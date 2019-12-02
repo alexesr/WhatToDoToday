@@ -13,7 +13,7 @@ import com.testing.what2dotoday.R
 import com.testing.what2dotoday.ui.home.HomeFragment
 import com.testing.what2dotoday.ui.home.HomeViewModel
 
-class PlacesFragment : Fragment() {
+class PlacesFragmentPrice : Fragment() {
 
     private lateinit var placesList: ArrayList<PlacesModel>
     private lateinit var userLocation: ArrayList<HomeViewModel>
@@ -34,11 +34,11 @@ class PlacesFragment : Fragment() {
         placesList.add(PlacesModel(R.drawable.desert, "Desert", "Descripción del Desierto",20.11, 10.10,"Cheap"))
         places_recyclyerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = PlaceByCategoryAdapter(placesList)
+            adapter = PlaceByPriceAdapter(placesList)
         }
         userLocation = ArrayList<HomeViewModel>()
     }
     companion object {
-        fun newInstance(): PlacesFragment = PlacesFragment()
+        fun newInstance(): PlacesFragmentPrice = PlacesFragmentPrice()
     }
 }

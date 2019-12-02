@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
 import com.testing.what2dotoday.SignInActivity
-import kotlinx.android.synthetic.main.fragment_places.*
+import kotlinx.android.synthetic.main.fragment_prices.*
 import android.content.Intent
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
@@ -26,7 +26,7 @@ import org.w3c.dom.Text
 import kotlin.random.Random
 
 
-class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByCategoryAdapter.ViewHolder>(){
+class PlaceByPriceAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByPriceAdapter.ViewHolder>(){
 
     private lateinit var myhandler: Handler
     private  val splashTime = 500L
@@ -51,7 +51,7 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
             println("WHATTHEFYCH")
             println(latitude)
         }
-        if(row.lat > 10.0 && row.long < 11.5){
+        if(row.price === "Medium"){
             holder.placeImage.setImageResource(row.image)
             holder.placeTitle.text = row.title
             holder.placeDescription.text = row.description
