@@ -15,6 +15,7 @@ import com.testing.what2dotoday.SignInActivity
 import kotlinx.android.synthetic.main.fragment_places.*
 import android.content.Intent
 import androidx.core.content.ContextCompat.startActivity
+import com.testing.what2dotoday.ui.profile.ProfileFragment
 import com.testing.what2dotoday.ui.test.TestAdapter
 import com.testing.what2dotoday.ui.test.TestModel
 import org.w3c.dom.Text
@@ -42,6 +43,8 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         holder.placeImage.setImageResource(row.image)
         holder.placeTitle.text = row.title
         holder.placeDescription.text = row.description
+        holder.placeLoc.text = row.location
+        holder.placePrice.text = "$"+row.price
 
         holder.write.setOnClickListener{
 
@@ -55,6 +58,8 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         var placeImage = itemView.findViewById(R.id.place_image) as ImageView
         var placeTitle = itemView.findViewById(R.id.place_title) as TextView
         var placeDescription = itemView.findViewById(R.id.place_description) as  TextView
+        var placeLoc = itemView.findViewById(R.id.location) as TextView
+        var placePrice =  itemView.findViewById(R.id.price) as TextView
 
         var write = itemView.findViewById(R.id.write) as ImageButton
     }

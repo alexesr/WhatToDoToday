@@ -2,4 +2,4 @@ package com.testing.what2dotoday.ui.places
 
 import android.widget.ImageButton
 
-data class PlacesModel(val image:Int, val title:String, val description:String)
+data class PlacesModel(val image:Int, val title:String, val description:String, val location: String, val price: String)

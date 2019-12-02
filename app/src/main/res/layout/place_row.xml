@@ -46,6 +46,24 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             />
+        <TextView
+            android:text="Near"
+            android:textSize="18dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="85dp"
+            android:background="#ffffff"
+            android:layout_marginTop="63dp"
+            android:id="@+id/location"/>
+        <TextView
+            android:text="$1.5"
+            android:textSize="18dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="150dp"
+            android:background="#ffffff"
+            android:layout_marginTop="63dp"
+            android:id="@+id/price"/>
         <ImageButton
             android:src="@drawable/write"
             android:layout_width="40dp"
