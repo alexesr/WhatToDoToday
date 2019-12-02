@@ -42,7 +42,7 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
             //val intent = Intent(context, SignInActivity::class.java)
             //context.startActivity(intent)
             val dialog = PlacesDialogFragment()
-            dialog.show(holder.activity!!.supportFragmentManager, "DeleteCategoryDialog")
+            dialog.show(holder.activity!!.supportFragmentManager, "ViewDialog")
         }
     }
 

@@ -11,6 +11,7 @@ import com.testing.what2dotoday.SignInActivity
 import android.content.Intent
 import androidx.cardview.widget.CardView
 import com.google.android.gms.location.LocationResult
+import com.testing.what2dotoday.MainActivity
 
 class PlaceByPriceAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByPriceAdapter.ViewHolder>(){
 
@@ -36,10 +37,8 @@ class PlaceByPriceAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.
             holder.placeLoc.text = "Near"
             holder.placePrice.text = row.price
             holder.write.setOnClickListener{
-
-                val context = holder.itemView.context
-                val intent = Intent(context, SignInActivity::class.java)
-                context.startActivity(intent)
+                val dialog = PlacesDialogFragment()
+                dialog.show(holder.activity!!.supportFragmentManager, "ViewDialog")
             }
         }else{
             holder.card.removeView(holder.lay)
@@ -56,6 +55,7 @@ class PlaceByPriceAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.
         var write = itemView.findViewById(R.id.write) as ImageButton
         var card = itemView.findViewById(R.id.cardL) as CardView
         var lay = itemView.findViewById(R.id.lay) as RelativeLayout
+        var activity = itemView.context as? MainActivity
     }
 
 }
