@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.testing.what2dotoday.R
 import kotlinx.android.synthetic.main.fragment_places.*
-
+import com.google.android.material.tabs.TabLayout
+import com.testing.what2dotoday.R
 
 class PlacesFragment : Fragment() {
 
     private lateinit var placesList: ArrayList<PlacesModel>
+
+    private lateinit var tabs: TabLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,6 +22,12 @@ class PlacesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        tabs = tabsid
+        tabs.addTab(tabs.newTab().setText("Location"))
+        tabs.addTab(tabs.newTab().setText("Price"))
+        tabs.addTab(tabs.newTab().setText("All"))
+
 
         placesList = ArrayList<PlacesModel>()
         placesList.add(PlacesModel(R.drawable.beach,"Beach","Descripcion de la playa"))

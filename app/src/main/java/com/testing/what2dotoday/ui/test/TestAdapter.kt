@@ -20,7 +20,7 @@ import kotlin.random.Random
 
 class TestAdapter(val answerList: ArrayList<TestModel>, val testFragment: TestFragment): RecyclerView.Adapter<TestAdapter.ViewHolder>(){
 
-    private  val splashTime = 500L
+    private  val splashTime = 600L
     private lateinit var myhandler: Handler
     private lateinit var vibrator: Vibrator
 
@@ -91,7 +91,7 @@ class TestAdapter(val answerList: ArrayList<TestModel>, val testFragment: TestFr
         toast.show()
 
         myhandler.postDelayed({
-            refresh()
+           refresh()
         },splashTime)
     }
 
