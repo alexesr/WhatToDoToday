@@ -44,6 +44,7 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
         holder.placeDescription.text = row.description
 
         holder.write.setOnClickListener{
+
             val context = holder.itemView.context
             val intent = Intent(context, SignInActivity::class.java)
             context.startActivity(intent)
