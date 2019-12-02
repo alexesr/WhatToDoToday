@@ -1,28 +1,23 @@
 package com.testing.what2dotoday.ui.places
 
 import android.os.Bundle
-import android.os.LocaleList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_places.*
+import kotlinx.android.synthetic.main.fragment_prices.*
 import com.google.android.material.tabs.TabLayout
 import com.testing.what2dotoday.R
-import com.testing.what2dotoday.ui.home.HomeFragment
-import com.testing.what2dotoday.ui.home.HomeViewModel
 
 class PlacesFragmentPrice : Fragment() {
 
     private lateinit var placesList: ArrayList<PlacesModel>
-    private lateinit var userLocation: ArrayList<HomeViewModel>
-
     private lateinit var tabs: TabLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_places,container,false)
+        savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_prices,container,false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,7 +31,6 @@ class PlacesFragmentPrice : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             adapter = PlaceByPriceAdapter(placesList)
         }
-        userLocation = ArrayList<HomeViewModel>()
     }
     companion object {
         fun newInstance(): PlacesFragmentPrice = PlacesFragmentPrice()

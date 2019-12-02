@@ -4,10 +4,11 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_home">Inicio</string>
     <string name="menu_test">Test</string>
     <string name="menu_places">Ubicación</string>
     <string name="menu_profile">Perfil</string>
     <string name="menu_prices">Precio</string>
+    <string name="menu_all">Todos los lugares</string>
+
 
 </resources>

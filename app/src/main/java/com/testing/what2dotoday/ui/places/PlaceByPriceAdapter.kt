@@ -1,36 +1,20 @@
 package com.testing.what2dotoday.ui.places
 
-import android.app.Dialog
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.*
 import android.os.Handler
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.what2dotoday.R
 import com.testing.what2dotoday.SignInActivity
-import kotlinx.android.synthetic.main.fragment_prices.*
 import android.content.Intent
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
-import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
-import com.testing.what2dotoday.ui.profile.ProfileFragment
-import com.testing.what2dotoday.ui.test.TestAdapter
-import com.testing.what2dotoday.ui.test.TestModel
-import kotlinx.android.synthetic.main.fragment_home.*
-import org.w3c.dom.Text
-import kotlin.random.Random
-
 
 class PlaceByPriceAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.Adapter<PlaceByPriceAdapter.ViewHolder>(){
 
     private lateinit var myhandler: Handler
-    private  val splashTime = 500L
-    lateinit var locationCallback: LocationCallback
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.place_row ,parent,false)
@@ -44,13 +28,7 @@ class PlaceByPriceAdapter(val placesList: ArrayList<PlacesModel>): RecyclerView.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val row: PlacesModel = placesList[position]
-        fun onLocationResult(p0: LocationResult?) {
-            var location = p0!!.locations.get(p0!!.locations.size - 1)
-            var latitude = location.latitude
-            var longitude = location.longitude
-            println("WHATTHEFYCH")
-            println(latitude)
-        }
+
         if(row.price === "Medium"){
             holder.placeImage.setImageResource(row.image)
             holder.placeTitle.text = row.title

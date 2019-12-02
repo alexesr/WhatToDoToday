@@ -36,7 +36,6 @@ class PlacesFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             adapter = PlaceByCategoryAdapter(placesList)
         }
-        userLocation = ArrayList<HomeViewModel>()
     }
     companion object {
         fun newInstance(): PlacesFragment = PlacesFragment()
