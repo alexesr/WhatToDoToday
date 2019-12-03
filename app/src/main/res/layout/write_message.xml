@@ -40,7 +40,7 @@
         android:gravity="start"
         android:hint="Escribe tu reseña aquí..."
         android:inputType="text|textCapSentences"
-        android:minHeight="150dp"
+        android:minHeight="120dp"
         android:padding="10dp"
         android:layout_gravity="center"
         android:textColor="@color/colorBlack" />

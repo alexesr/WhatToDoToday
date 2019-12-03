@@ -55,7 +55,6 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
 
         var write = itemView.findViewById(R.id.write) as ImageButton
         var activity = itemView.context as? MainActivity
-
     }
 
     fun getFilter(): Filter {
