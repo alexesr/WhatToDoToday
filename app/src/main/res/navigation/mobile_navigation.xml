@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.testing.what2dotoday.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/nav_sli">
 
     <fragment
         android:id="@+id/nav_test"
@@ -18,9 +12,9 @@
         tools:layout="@layout/fragment_test" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_sli"
         android:name="com.testing.what2dotoday.ui.places.PlacesFragment"
-        android:label="@string/menu_places"
+        android:label="@string/menu_all"
         tools:layout="@layout/fragment_places" />
 
     <fragment
@@ -28,16 +22,15 @@
         android:name="com.testing.what2dotoday.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
-
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.testing.what2dotoday.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
+        android:id="@+id/nav_slide"
+        android:name="com.testing.what2dotoday.ui.places.PlacesFragmentPrice"
+        android:label="@string/menu_prices"
+        tools:layout="@layout/fragment_prices" />
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.testing.what2dotoday.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send"/>
+        android:id="@+id/nav_slideshow"
+        android:name="com.testing.what2dotoday.ui.places.PlacesFragmentLocation"
+        android:label="@string/menu_places"
+        tools:layout="@layout/fragment_location" />
+
 </navigation>
