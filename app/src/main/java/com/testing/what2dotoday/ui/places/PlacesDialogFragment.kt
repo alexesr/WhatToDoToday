@@ -47,8 +47,8 @@ class PlacesDialogFragment : DialogFragment() {
             view.sendEmailBtn.setOnClickListener(){
                 //sendInfo(view)
 
-                val message: String = messageEt.text.toString()
-                val subject: String = subjectEt.text.toString()
+                val message: String = view.messageEt.text.toString()
+                val subject: String = view.subjectEt.text.toString()
 
                 val body: Map<String, String> = java.util.HashMap<String, String>(2)
 
@@ -73,11 +73,79 @@ class PlacesDialogFragment : DialogFragment() {
                 queue.add(stringRequest)
                 queue.start()
             }
-            view.cancelBtn.setOnClickListener{
-                dialog!!.dismiss()
-            }
             builder.setView(view)
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
+    fun sendInfo(view: View){
+        val message = view.findViewById(com.testing.what2dotoday.R.id.messageEt) as TextView
+        // Fetch arguments from bundle and set title
+        val subject = view.findViewById(com.testing.what2dotoday.R.id.subjectEt) as TextView
+        val sendBtn = view.findViewById(com.testing.what2dotoday.R.id.sendEmailBtn) as Button
+
+        val context = this.context
+        val duration = Toast.LENGTH_LONG
+        try{
+            val recipient = "maritza_rh97@hotmail.com"
+            val subjects = subject.toString()
+            val messages= message.toString()
+
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.setType("plain/text")
+
+            intent.putExtra(Intent.EXTRA_EMAIL, recipient)
+            intent.putExtra(Intent.EXTRA_SUBJECT, subjects)
+            intent.putExtra(Intent.EXTRA_TEXT, messages)
+            startActivity(intent)
+            //val toast = Toast.makeText(context, "YEIIII", duration)
+            //toast.show()
+        }
+        catch (e: Exception){
+            val toast = Toast.makeText(context, "Sending not working", duration)
+            toast.show()
+        }
+        //val toast = Toast.makeText(context, "YEIIII2", duration)
+        //toast.show()
+
+    }
+
+    fun onBindViewHolder(view: View) {
+
+        val message = view.findViewById(com.testing.what2dotoday.R.id.messageEt) as TextView
+        // Fetch arguments from bundle and set title
+        val subject = view.findViewById(com.testing.what2dotoday.R.id.subjectEt) as TextView
+        val sendBtn = view.findViewById(com.testing.what2dotoday.R.id.sendEmailBtn) as Button
+
+        val context = this.context
+        val duration = Toast.LENGTH_LONG
+        try {
+            sendBtn.setOnClickListener {
+                try{
+                    val recipient = "maritza_rh97@hotmail.com"
+                    val subjects = subject.toString()
+                    val messages= message.toString()
+
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.setType("plain/text")
+
+                    intent.putExtra(Intent.EXTRA_EMAIL, recipient)
+                    intent.putExtra(Intent.EXTRA_SUBJECT, subjects)
+                    intent.putExtra(Intent.EXTRA_TEXT, messages)
+                    startActivity(intent)
+                    val toast = Toast.makeText(context, "YEIIII", duration)
+                    toast.show()
+                }
+                catch (e: Exception){
+                    val toast = Toast.makeText(context, "Sending not working", duration)
+                    toast.show()
+                }
+            }
+            val toast = Toast.makeText(context, "YEIIII2", duration)
+            toast.show()
+        }
+        catch (e: Exception){
+            Toast.makeText(this.context,"Nooooo",Toast.LENGTH_LONG).show()
+        }
+    }
+
 }

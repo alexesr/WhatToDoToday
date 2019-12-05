@@ -43,6 +43,7 @@ class PlaceByCategoryAdapter(val placesList: ArrayList<PlacesModel>): RecyclerVi
             //context.startActivity(intent)
             val dialog = PlacesDialogFragment()
             dialog.show(holder.activity!!.supportFragmentManager, "ViewDialog")
+
             //val button:Button = (Button)promptView.findViewById(R.id.sendEmailBtn)
         }
     }

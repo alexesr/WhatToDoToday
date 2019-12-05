@@ -25,12 +25,11 @@
         android:id="@+id/subjectEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre lugar"
+        android:hint="Título"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="2dp"
         android:inputType="text|textCapSentences"
         android:padding="10dp"
-        android:minHeight="50dp"
         android:textColor="@color/colorBlack" />
 
     <!--EditText: Input the message-->
@@ -41,37 +40,20 @@
         android:gravity="start"
         android:hint="Escribe tu reseña aquí..."
         android:inputType="text|textCapSentences"
-        android:minHeight="90dp"
+        android:minHeight="120dp"
         android:padding="10dp"
         android:layout_gravity="center"
         android:textColor="@color/colorBlack" />
 
     <!--Button:   Launch existing email clients to send email-->
-
-    <LinearLayout
+    <Button
+        android:id="@+id/sendEmailBtn"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/cancelBtn"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#a9a9a9"
-            android:shadowColor="#a9a9a9"
-            android:text="Cancelar"
-            />
-
-        <Button
-            android:id="@+id/sendEmailBtn"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:shadowColor="@color/colorPrimary"
-            android:text="Enviar" />
-    </LinearLayout>
+        android:text="send Email"
+        android:shadowColor="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"/>
 
 </LinearLayout>
