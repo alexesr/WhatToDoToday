@@ -71,6 +71,7 @@ class PlacesDialogFragment : DialogFragment() {
                     Response.ErrorListener { error -> error.printStackTrace()})
                 queue.add(stringRequest)
                 queue.start()
+                Toast.makeText(this.context, "Reseña enviada.", Toast.LENGTH_LONG).show()
                 dialog!!.dismiss()
             }
             view.cancelBtn.setOnClickListener{
